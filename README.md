@@ -7,6 +7,7 @@ Project for anomaly detection in time series comparing the proposed Vacuum Spike
 - Deep Learning baselines: 'Baselines/DeepLearning_baselines/'
 - Machine Learning baselines: 'Baselines/MachineLearning_baselines/'
 - Evaluation and tables: 'Evaluation/' (R scripts, metric/table generation)
+-Case Study: 'SolarInverter/' (Scripts to aply the proposed algorithm to a solar inverter)
 - Input data: 'input/' with three sources ('CalIt2', 'Dodgers', 'Numenta')
 
 ## Repository structure
@@ -31,6 +32,10 @@ Project for anomaly detection in time series comparing the proposed Vacuum Spike
     - 'search_codes/' (R: family-specific aggregation)
     - 'statistical_tests/' (R: comparisons and tests)
     - 'tables/' (CSV outputs)
+  - 'SolarInverter/'
+    - 'run_experiment.py' (Application of the Vacuum Spiker algorithm to a solar inverter)
+    - 'evaluation.R' (Main script to eval results obtained on the solar inverter)
+    - 'dependencies.R' (Functions to perform evaluation)
   - 'input/' (source-labelled CSVs)
 
 ## Input data
@@ -99,6 +104,10 @@ source("ppal.R")
 '''
 
 The resulting tables are stored in '/Evaluation/tables/'. The results of the statistical tests are displayed on the screen.
+
+4) Run Solar Inverter
+
+This part was developed with real-world data, that is not included. To execute it, input labelled data must be placed in the folder 'SolarInverter/data/'. Two files are required: 'train.csv' and 'test.csv'. They must have the columns 'Power' and 'Label'. Samples should be separated by fixed-length time intervals. Missing values are allowed. To run an experiment, execute 'run_experiment.py', to apply the Vacuum Spiker algorithm, and then, 'evaluation.R' to get the performance metrics and mean of spikes produced.
 
 ## Notes and conventions
 

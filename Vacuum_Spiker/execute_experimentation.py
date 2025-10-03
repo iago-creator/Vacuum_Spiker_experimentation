@@ -79,14 +79,14 @@ for train_index, test_index in tscv.split(data):
     # Model input ranges
     data_range = maxim - minim
 
-    # Build quantiles for input encoding
+    # Build intervals for input encoding
     one = torch.FloatTensor(np.arange(minim - exten * data_range, minim, reso * data_range))
     two = torch.FloatTensor(np.arange(maxim, maxim + exten * data_range, reso * data_range))
     half = torch.unique(torch.quantile(torch.FloatTensor(data_train['value'].dropna()), torch.FloatTensor(np.arange(0, 1, reso))))
-    quantiles = torch.cat((one, half, two))
+    intervals = torch.cat((one, half, two))
 
     # Number of input neurons
-    R = len(quantiles) - 1
+    R = len(intervals) - 1
 
     # Create SNN
     network, source_monitor, target_monitor = create_network(R, T, n, threshold, decay, nu1, nu2, recurrent, device)
@@ -96,9 +96,9 @@ for train_index, test_index in tscv.split(data):
 
     # Prepare training and test sequences
     network.learning = True
-    secuencias2train = prepare_data(data_train, T, quantiles, R, device, is_train=True)
+    secuencias2train = prepare_data(data_train, T, intervals, R, device, is_train=True)
     print(f'Training dataset length: {len(secuencias2train)}')
-    secuencias2test = prepare_data(data_test, T, quantiles, R, device)
+    secuencias2test = prepare_data(data_test, T, intervals, R, device)
     print(f'Test dataset length: {len(secuencias2test)}')
 
     # Training loop

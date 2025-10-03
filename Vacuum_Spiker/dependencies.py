@@ -37,19 +37,19 @@ def encode_spike(x, q1, q2):
     s[(x >= q1) & (x < q2)] = 1
     return s
 
-def prepare_data(data, T, quantiles, R, device, is_train=False):
+def prepare_data(data, T, intervals, R, device, is_train=False):
     """
     Prepare and encode time series data for SNN input.
     Returns a list of sequences split by exposure time T.
     """
     series = torch.FloatTensor(data['value'])
     # Clamp values to quantile range
-    series[series < torch.min(quantiles)] = torch.min(quantiles)
-    series[series > torch.max(quantiles)] = torch.max(quantiles)
+    series[series < torch.min(intervals)] = torch.min(intervals)
+    series[series > torch.max(intervals)] = torch.max(intervals)
     # Encode data into spikes
     series2input = torch.cat([series.unsqueeze(0)] * R, dim=0)
     for i in range(R):
-        series2input[i, :] = encode_spike(series2input[i, :], quantiles[i], quantiles[i + 1])
+        series2input[i, :] = encode_spike(series2input[i, :], intervals[i], intervals[i + 1])
     # Split into sequences of length T
     sequences = torch.split(series2input.to(device), T, dim=1)
     if is_train:
