@@ -1,5 +1,5 @@
 import torch
-from TSFEDLtorch.models_pytorch import OhShuLih, CaiWenjuan, ZhengZhenyu
+from TSFEDL.models_pytorch import OhShuLih, CaiWenjuan, ZhengZhenyu
 
 """
 This module defines the deep learning baseline models for time series feature extraction.
