@@ -3,7 +3,7 @@ from sklearn.model_selection import TimeSeriesSplit
 from sklearn.preprocessing import StandardScaler
 from dependencies import *
 from baselines import *
-from TSFEDLtorch.models_pytorch import YildirimOzal
+from TSFEDL.models_pytorch import YildirimOzal
 
 # Main script for final experimentation.
 # Configurable parameters are provided via command line arguments.
