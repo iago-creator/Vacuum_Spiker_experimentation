@@ -63,10 +63,10 @@ The input datasets have been preprocessed to ensure that the separation between 
 ## Requirements
 
 - Python 3.8+ with:
-  - 'torch', 'numpy', 'pandas', 'scikit-learn', 'bindsnet'
+  - 'torch', 'numpy', 'pandas', 'scikit-learn', 'bindsnet', 'TSFEDL'
 
 The library versions used in the execution of this project have been the following:
-  - 'torch 2.4.0', 'numpy 2.0.2', 'pandas 2.2.2', 'scikit-learn 1.5.2', 'bindsnet 0.2.7'
+  - 'torch 2.4.0', 'numpy 2.0.2', 'pandas 2.2.2', 'scikit-learn 1.5.2', 'bindsnet 0.2.7', 'TSFEDL 1.0.7.7'
 - R 4.1+ with the following libraries:
 dplyr,purrr,scmamp,pracma,pROC,caret
 
