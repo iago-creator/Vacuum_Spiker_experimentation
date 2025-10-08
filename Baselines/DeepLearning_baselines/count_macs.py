@@ -1,8 +1,8 @@
 import torch
-from TSFEDLtorch.models_pytorch import YildirimOzal
+from TSFEDL.models_pytorch import YildirimOzal
 from baselinas import *
-from TSFEDLtorch.blocks_pytorch import RTABlock, SqueezeAndExcitationModule, DenseNetDenseBlock, DenseNetTransitionBlock
-from TSFEDLtorch.utils import flip_indices_for_conv_to_lstm
+from TSFEDL.blocks_pytorch import RTABlock, SqueezeAndExcitationModule, DenseNetDenseBlock, DenseNetTransitionBlock
+from TSFEDL.utils import flip_indices_for_conv_to_lstm
 
 # Utility functions to count MACs (Multiply-Accumulate Operations) for different deep learning models.
 # This script computes the MAC counts for the different DL models used as  baselines, under the 
