@@ -1,4 +1,4 @@
-##Time Series Anomaly Analysis with SNN and Baselines
+### Time Series Anomaly Analysis with SNN and Baselines
 
 Project for anomaly detection in time series comparing the proposed Vacuum Spiker algorithm, based on Spiking Neural Networks (SNNs), against multiple Deep Learning and classic Machine Learning baselines. It includes a reproducible evaluation pipeline (R) for performance and approximate computational cost, through MACs counting.
 
