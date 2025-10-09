@@ -1,10 +1,10 @@
-### Time Series Anomaly Analysis with SNN and Baselines
+# Time Series Anomaly Analysis with SNN and Baselines
 
 Project for anomaly detection in time series comparing the proposed Vacuum Spiker algorithm, based on Spiking Neural Networks (SNNs), against multiple Deep Learning and classic Machine Learning baselines. It includes a reproducible evaluation pipeline (R) for performance and approximate computational cost, through MACs counting.
 
 [Paper](https://arxiv.org/abs/2510.06910)
 
-### Main contents
+# Main contents
 - Proposed algorithm: 'Vacuum_Spiker/'
 - Deep Learning baselines: 'Baselines/DeepLearning_baselines/'
 - Machine Learning baselines: 'Baselines/MachineLearning_baselines/'
@@ -62,7 +62,7 @@ The input datasets have been preprocessed to ensure that the separation between 
   - Selects best results per metric ('gm', 'auc', 'f1') with 'search_codes/search_best_results.R', and get the corresponding energy consumption.
   - Global statistical tests: 'statistical_tests/global_tests.R', to study differences in performance and energy consumption between Vacuum Spiker algorithm and baselines; and 'synanptic_behaviour_study.R', to study the different synaptic behaviours.
 
-## Requirements
+# Requirements
 
 - Python 3.8+ with:
   - 'torch', 'numpy', 'pandas', 'scikit-learn', 'bindsnet', 'TSFEDL'
@@ -75,22 +75,22 @@ dplyr,purrr,scmamp,pracma,pROC,caret
 The versions used during the execution of the present project have been the following:
 'dplyr 1.1.4','purrr 1.0.4','scmamp 0.3.2','pracma 2.4.4','pROC 1.18.5','caret 7.0.1'
 
-## How to run (summary)
+# How to run (summary)
 
 1) Copy the folder 'input' into the Vacuum Spiker and baselines folders.
 
 2) Run experiment grids:
 
 '''bash
-# SNN (Vacuum Spiker)
+## SNN (Vacuum Spiker)
 cd /Vacuum_Spiker
 python ppal.py
 
-# Deep Learning
+## Deep Learning
 cd ../Baselines/DeepLearning_baselines
 python ppal.py
 
-# Machine Learning: LOF and OCSVM
+## Machine Learning: LOF and OCSVM
 cd ../MachineLearning_baselines
 python ppal_lof.py
 python ppal_ocsvm.py
