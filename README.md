@@ -115,7 +115,7 @@ This part was developed with real-world data, that is not included. To execute i
 
 - Output paths include hyperparameters to enable automatic aggregation.
 
-##Citation
+## Citation
 
 If you find our work useful, please consider citing:
 
