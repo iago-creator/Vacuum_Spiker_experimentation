@@ -2,6 +2,8 @@
 
 Project for anomaly detection in time series comparing the proposed Vacuum Spiker algorithm, based on Spiking Neural Networks (SNNs), against multiple Deep Learning and classic Machine Learning baselines. It includes a reproducible evaluation pipeline (R) for performance and approximate computational cost, through MACs counting.
 
+[Paper](https://arxiv.org/abs/2510.06910)
+
 ### Main contents
 - Proposed algorithm: 'Vacuum_Spiker/'
 - Deep Learning baselines: 'Baselines/DeepLearning_baselines/'
@@ -112,6 +114,18 @@ This part was developed with real-world data, that is not included. To execute i
 ## Notes and conventions
 
 - Output paths include hyperparameters to enable automatic aggregation.
+
+If you find our work useful, please consider citing:
+
+@misc{vázquez2025vacuumspikerspikingneural,
+      title={Vacuum Spiker: A Spiking Neural Network-Based Model for Efficient Anomaly Detection in Time Series}, 
+      author={Iago Xabier Vázquez and Javier Sedano and Muhammad Afzal and Ángel Miguel García-Vico},
+      year={2025},
+      eprint={2510.06910},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2510.06910}, 
+}
 
 ## References
 
