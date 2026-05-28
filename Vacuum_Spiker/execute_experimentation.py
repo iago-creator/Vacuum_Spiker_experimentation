@@ -80,10 +80,13 @@ for train_index, test_index in tscv.split(data):
     data_range = maxim - minim
 
     # Build intervals for input encoding
-    one = torch.FloatTensor(np.arange(minim - exten * data_range, minim, reso * data_range))
-    two = torch.FloatTensor(np.arange(maxim, maxim + exten * data_range, reso * data_range))
-    half = torch.unique(torch.quantile(torch.FloatTensor(data_train['value'].dropna()), torch.FloatTensor(np.arange(0, 1, reso))))
-    intervals = torch.cat((one, half, two))
+    intervals = torch.FloatTensor(
+    np.arange(
+        minim - exten * data_range,
+        maxim + exten * data_range,
+        data_range * reso
+       )
+    )
 
     # Number of input neurons
     R = len(intervals) - 1
